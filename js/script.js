@@ -29,7 +29,6 @@ function blacklist(num, max_mines)
                     
                 }
         i++;
-        console.log(min + " " + max + " " + number);
     }
     console.log(myArray);
     return myArray;
@@ -72,8 +71,6 @@ diff_selector.addEventListener('click',
 
         let list = blacklist(col, mines);
         let tot_box = col * col;
-        let size =  Math.sqrt(col);
-
         for(let i = 1; i <= tot_box; i++)
         {
             let box = document.createElement("div");
@@ -84,10 +81,20 @@ diff_selector.addEventListener('click',
             box.addEventListener('click', 
                 function()
                 {
-                    
+                    let resutl = document.querySelector(".game-over > h1");
+                    let score_box = document.querySelector(".score");
                     if(!list.includes(parseInt(box.innerText)) && box.classList.contains("dynamic"))
                     {
                         this.classList.add("bg-green");
+                        let score = document.querySelectorAll(".box.bg-green");
+                        if(score.length == (col * col) - col * 2)
+                        {
+                            row.classList.add("opacity-50");
+                            game_over.classList.remove("d-none");
+                            resutl.innerHTML = '';
+                            resutl.innerHTML = 'YOU WIN';
+                            score_box.innerHTML = score.length;
+                        }
                     }
                     else
                     {
@@ -101,8 +108,6 @@ diff_selector.addEventListener('click',
                             }
                             box_created[i].classList.remove("dynamic");
                         }
-                        let score_box = document.querySelector(".score");
-                        let score = document.querySelectorAll(".box.bg-green");
                         row.classList.add("opacity-50");
                         game_over.classList.remove("d-none");
                         score_box.innerHTML = score.length;
@@ -110,6 +115,5 @@ diff_selector.addEventListener('click',
                 }
             );
         }
-        
     }
 );
