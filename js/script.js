@@ -55,19 +55,17 @@ diff_selector.addEventListener('click',
             case '1':
                 col = 10;
                 mines = 2;
-                css_paper.setProperty('--size', col);
             break;
             case '2':
                 col = 9;
                 mines = 3;
-                css_paper.setProperty('--size', col);
             break;
             case '3':
                 col = 7;
                 mines = 4;
-                css_paper.setProperty('--size', col);
             break;
         }
+        css_paper.setProperty('--size', col);
 
         let list = blacklist(col, mines);
         let tot_box = col * col;
