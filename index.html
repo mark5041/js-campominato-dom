@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+                <div class="navbar-brand d-flex" href="#">
+                    <img src="img/logo.png" alt="" width="40rem" height="40rem" class="d-inline-block me-2 align-self-center">
+                    <h1 class="title align-self-center">Campo Minato: La Griglia</h1>
+                </div>
+                <div class="d-flex">
+                    <label class="align-self-center" for="">Difficulty: </label>
+                    <select class="my-selection mx-md-3 align-self-center" >
+                        <option value="1" selected>easy</option>
+                        <option value="2">normal</option>
+                        <option value="3">hard</option>
+                    </select>
+                    <button class="my-btn">Play</button>
+                </div>
+            </div>
+          </nav>
+
+    </header>
+
+    <main>
+        <div class="container d-flex justify-content-center">
+            <div class="my-container d-flex justify-content-center">
+                <div class="row">
+                    <!-- <div class="box normal"></div> -->
+                </div>
+                
+                <div class="game-over d-none align-self-center text-center">
+                    <h1>Game Over</h1>
+                    <h2>Score: </h2>
+                    <span class="score"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
