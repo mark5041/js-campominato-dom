@@ -82,12 +82,13 @@ diff_selector.addEventListener('click',
                 function()
                 {
                     let resutl = document.querySelector(".game-over > h1");
+                    let score = document.querySelectorAll(".box.bg-green");
                     let score_box = document.querySelector(".score");
                     if(!list.includes(parseInt(box.innerText)) && box.classList.contains("dynamic"))
                     {
                         this.classList.add("bg-green");
-                        let score = document.querySelectorAll(".box.bg-green");
-                        if(score.length == (col * col) - col * 2)
+                        score = document.querySelectorAll(".box.bg-green");
+                        if(score.length == (col * col) - col * mines)
                         {
                             row.classList.add("opacity-50");
                             game_over.classList.remove("d-none");
