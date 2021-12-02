@@ -52,6 +52,7 @@ main {
 .my-container {
     width: 800px;
     height: 800px;
+    position: relative;
 }
 
 .row {
@@ -70,6 +71,24 @@ main {
     height: calc((100% / var(--size)) - 5px);
 }
 
+.game-over {
+    position: absolute;
+    top: 30%;
+}
+
+.game-over > h1 {
+    font-size: 4em;
+}
+
+.game-over > h2 {
+    font-size: 3.7em;
+}
+
+.score {
+    font-size: 3.5em;
+    font-weight: 800;
+}
+
 .bg-green {
     background-color: chartreuse;
 }
@@ -77,3 +96,8 @@ main {
 .bg-red {
     background-color: crimson;
 }
+
+.opacity-50 {
+    opacity: 0.1;
+}
+

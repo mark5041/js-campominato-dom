@@ -42,7 +42,7 @@ diff_selector.addEventListener('click',
     {
         let game_over = document.querySelector(".game-over")
         let row = document.querySelector(".row");
-        row.classList.remove("d-none");
+        row.classList.remove("opacity-50");
         game_over.classList.add("d-none");
         row.innerHTML = '';
 
@@ -103,7 +103,7 @@ diff_selector.addEventListener('click',
                         }
                         let score_box = document.querySelector(".score");
                         let score = document.querySelectorAll(".box.bg-green");
-                        row.classList.add("d-none");
+                        row.classList.add("opacity-50");
                         game_over.classList.remove("d-none");
                         score_box.innerHTML = score.length;
                     }
