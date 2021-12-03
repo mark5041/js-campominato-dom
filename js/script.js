@@ -31,16 +31,63 @@ function blacklist(num, max_mines)
                 }
         i++;
     }
-    // per vedere i numeri bomba
-    console.log(myArray);
+    // per vedere i numeri bomba in ordine crescente
+    console.log(myArray.sort((a, b) => {
+        if (a > b)
+            return 1;
+        if (a < b)
+            return -1;
+        return 0;
+    }));
+    
     return myArray;
 }
+
+// funzione per l'avvio del gioco
+function play()
+{
+    console.clear();
+    let game_over = document.querySelector(".game-over")
+
+    // reset generale
+    let row = document.querySelector(".row");
+    row.classList.remove("opacity-50");
+    game_over.classList.add("d-none");
+    row.innerHTML = '';
+
+    let diff = document.querySelector(".my-selection");
+    let col;
+    let mines;
+    let css_paper = document.documentElement.style;
+
+    // scelgo il numero di box e di mine per riga in base alla difficolta
+    switch(diff.value)
+    {
+        case '1':
+            col = 10;
+            mines = 2;
+        break;
+        case '2':
+            col = 9;
+            mines = 3;
+        break;
+        case '3':
+            col = 7;
+            mines = 4;
+        break;
+    }
+    css_paper.setProperty('--size', col);
+}
+
+
+/** GAME START */
 
 let diff_selector = document.querySelector(".my-btn");
 
 diff_selector.addEventListener('click', 
     function()
     {
+        play();
         let game_over = document.querySelector(".game-over")
 
         // reset generale
