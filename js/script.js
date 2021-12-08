@@ -110,7 +110,6 @@ diff_selector.addEventListener('click',
                 if(!list.includes(parseInt(box.innerText)))
                 {
                     this.classList.add("bg-green");
-                    console.log(this);
                     // Aggiorno il numero di box corretti già cliccati
                     score = document.querySelectorAll(".box.bg-green");
                     // Se abbiamo selezionato tutti i box corretti uscirà la schermata di vittoria
@@ -131,21 +130,19 @@ diff_selector.addEventListener('click',
                     if(bombs_exploded.length < max_attemps)
                     {
                         this.classList.add("bg-red");
-                        console.log(this);
                     }
                     else
                     {
                         for(let i = 0; i < box_created.length; i++)
                         {
-                            console.log(box_created[i]);
-                            // Rendo non cliccabili tutti i box
-                            box_created[i].removeEventListener("click", click_trigger);
+                            console.log(box_created[i].outerHTML);
                             if(list.includes(parseInt(box_created[i].innerText)))
                             {
                                 // Rendo visibili tutte le mine
                                 box_created[i].classList.add("bg-red");
                             }
-                            
+                            // Rendo non cliccabili tutti i box
+                            box_created[i].removeEventListener("click", click_trigger);
                         }
 
                         // Schermata del Game Over
